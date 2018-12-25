@@ -1,0 +1,658 @@
+Synthesizing design: AHB2CAN_top.sv
+dc_shell-t -x "source -echo do_mapping.tcl"
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# Step 1:  Read in the source file
+analyze -format sverilog -lib WORK {flex_counter.sv acceptance_filter.sv AHB_Slave.sv arbitration.sv can_crc.sv can_register.sv Command_FIFO_storage.sv Control_Unit.sv flex_pts_sr.sv flex_stp_sr.sv rx_sr.sv Sensor_FIFO_storage.sv tx_sr.sv AHB2CAN_top.sv}
+Running PRESTO HDLC
+Compiling source file ./source/flex_counter.sv
+Compiling source file ./source/acceptance_filter.sv
+Compiling source file ./source/AHB_Slave.sv
+Compiling source file ./source/arbitration.sv
+Compiling source file ./source/can_crc.sv
+Warning:  ./source/can_crc.sv:78: The value 0100010110011001 is too large for the numeric data type being used (VER-1)
+Compiling source file ./source/can_register.sv
+Warning:  ./source/can_register.sv:149: the undeclared symbol 'win' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./source/can_register.sv:150: the undeclared symbol 'loose' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./source/can_register.sv:298: The value 10101010000000000000000000000000 is too large for the numeric data type being used (VER-1)
+Warning:  ./source/can_register.sv:342: The value 00100000000000000000000000000000 is too large for the numeric data type being used (VER-1)
+Warning:  ./source/can_register.sv:350: The value 00100000000000000000000000000000 is too large for the numeric data type being used (VER-1)
+Warning:  ./source/can_register.sv:442: The value 00000000 is too large for the numeric data type being used (VER-1)
+Warning:  ./source/can_register.sv:447: The value 80000000 is too large for the numeric data type being used (VER-1)
+Compiling source file ./source/Command_FIFO_storage.sv
+Compiling source file ./source/Control_Unit.sv
+Compiling source file ./source/flex_pts_sr.sv
+Compiling source file ./source/flex_stp_sr.sv
+Compiling source file ./source/rx_sr.sv
+Compiling source file ./source/Sensor_FIFO_storage.sv
+Compiling source file ./source/tx_sr.sv
+Compiling source file ./source/AHB2CAN_top.sv
+Presto compilation completed successfully.
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/dw_foundation.sldb'
+elaborate AHB2CAN_top -lib WORK
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'AHB2CAN_top'.
+Information: Building the design 'AHB_Slave'. (HDL-193)
+
+Statistics for case statements in always block at line 77 in file
+	'./source/AHB_Slave.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            79            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine AHB_Slave line 61 in file
+		'./source/AHB_Slave.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Control_Unit'. (HDL-193)
+
+Statistics for case statements in always block at line 50 in file
+	'./source/Control_Unit.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            64            |     no/auto      |
+|           113            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine Control_Unit line 39 in file
+		'./source/Control_Unit.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     current_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Sensor_FIFO_storage'. (HDL-193)
+
+Inferred memory devices in process
+	in routine Sensor_FIFO_storage line 55 in file
+		'./source/Sensor_FIFO_storage.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==================================================================
+|    block name/line      | Inputs | Outputs | # sel inputs | MB |
+==================================================================
+| Sensor_FIFO_storage/106 |   8    |   32    |      3       | N  |
+==================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Command_FIFO_storage'. (HDL-193)
+
+Inferred memory devices in process
+	in routine Command_FIFO_storage line 56 in file
+		'./source/Command_FIFO_storage.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===================================================================
+|     block name/line      | Inputs | Outputs | # sel inputs | MB |
+===================================================================
+| Command_FIFO_storage/108 |   8    |   32    |      3       | N  |
+===================================================================
+Presto compilation completed successfully.
+Information: Building the design 'can_register'. (HDL-193)
+
+Statistics for case statements in always block at line 195 in file
+	'./source/can_register.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           198            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 249 in file
+	'./source/can_register.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           268            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine can_register line 52 in file
+		'./source/can_register.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  temp_rx_data_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine can_register line 164 in file
+		'./source/can_register.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    WRITE_CAN_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      sync1_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      sync2_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    send_data_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine can_register line 187 in file
+		'./source/can_register.sv'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| data_stored_command_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_counter' instantiated from design 'Sensor_FIFO_storage' with
+	the parameters "4". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS4 line 31 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    count_out_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'acceptance_filter'. (HDL-193)
+
+Inferred memory devices in process
+	in routine acceptance_filter line 85 in file
+		'./source/acceptance_filter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    correct1_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    tracking_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===============================================================
+|   block name/line    | Inputs | Outputs | # sel inputs | MB |
+===============================================================
+| acceptance_filter/64 |   16   |    1    |      4       | N  |
+===============================================================
+Presto compilation completed successfully.
+Information: Building the design 'can_crc'. (HDL-193)
+
+Inferred memory devices in process
+	in routine can_crc line 70 in file
+		'./source/can_crc.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     crc_out_reg     | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_counter' instantiated from design 'can_register' with
+	the parameters "6". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS6 line 31 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    count_out_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'tx_sr'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'rx_sr'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'arbitration'. (HDL-193)
+
+Inferred memory devices in process
+	in routine arbitration line 92 in file
+		'./source/arbitration.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    tracking_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       win_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      loose_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_pts_sr' instantiated from design 'tx_sr' with
+	the parameters "32,1". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_pts_sr_NUM_BITS32_SHIFT_MSB1 line 59 in file
+		'./source/flex_pts_sr.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    parallel_reg     | Flip-flop |  31   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_stp_sr' instantiated from design 'rx_sr' with
+	the parameters "32,1". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_stp_sr_NUM_BITS32_SHIFT_MSB1 line 27 in file
+		'./source/flex_stp_sr.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  parallel_out_reg   | Flip-flop |  32   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+uniquify
+Information: Uniquified 6 instances of design 'flex_counter_NUM_CNT_BITS4'. (OPT-1056)
+# Step 2: Set design constraints
+# Uncomment below to set timing, area, power, etc. constraints
+# set_max_delay <delay> -from "<input>" -to "<output>"
+# set_max_area <area>
+# set_max_total_power <power> mW
+# Step 3: Compile the design
+compile -map_effort medium
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.1 |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.1 |     *     |
+============================================================================
+
+
+Information: There are 162 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'flex_counter_NUM_CNT_BITS4_0'
+  Processing 'arbitration'
+  Processing 'flex_stp_sr_NUM_BITS32_SHIFT_MSB1'
+  Processing 'rx_sr'
+  Processing 'flex_pts_sr_NUM_BITS32_SHIFT_MSB1'
+  Processing 'tx_sr'
+  Processing 'flex_counter_NUM_CNT_BITS6'
+  Processing 'can_crc'
+  Processing 'acceptance_filter'
+  Processing 'can_register'
+  Processing 'Command_FIFO_storage'
+Information: Added key list 'DesignWare' to design 'Command_FIFO_storage'. (DDB-72)
+  Processing 'Sensor_FIFO_storage'
+Information: Added key list 'DesignWare' to design 'Sensor_FIFO_storage'. (DDB-72)
+  Processing 'Control_Unit'
+  Processing 'AHB_Slave'
+  Processing 'AHB2CAN_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'AHB2CAN_top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'flex_counter_NUM_CNT_BITS6_DW01_cmp6_0'
+  Processing 'flex_counter_NUM_CNT_BITS6_DW01_cmp2_0'
+  Processing 'flex_counter_NUM_CNT_BITS6_DW01_inc_0'
+  Processing 'Command_FIFO_storage_DW01_inc_0'
+  Processing 'Sensor_FIFO_storage_DW01_inc_0'
+  Mapping 'AHB_Slave_DW_cmp_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'AHB_Slave'. (DDB-72)
+  Structuring 'flex_counter_NUM_CNT_BITS4_4'
+  Mapping 'flex_counter_NUM_CNT_BITS4_4'
+  Structuring 'flex_counter_NUM_CNT_BITS4_3'
+  Mapping 'flex_counter_NUM_CNT_BITS4_3'
+  Structuring 'flex_counter_NUM_CNT_BITS4_2'
+  Mapping 'flex_counter_NUM_CNT_BITS4_2'
+  Structuring 'flex_counter_NUM_CNT_BITS4_1'
+  Mapping 'flex_counter_NUM_CNT_BITS4_1'
+  Structuring 'flex_counter_NUM_CNT_BITS4_0'
+  Mapping 'flex_counter_NUM_CNT_BITS4_0'
+  Structuring 'flex_stp_sr_NUM_BITS32_SHIFT_MSB1'
+  Mapping 'flex_stp_sr_NUM_BITS32_SHIFT_MSB1'
+  Structuring 'flex_pts_sr_NUM_BITS32_SHIFT_MSB1'
+  Mapping 'flex_pts_sr_NUM_BITS32_SHIFT_MSB1'
+  Structuring 'arbitration'
+  Mapping 'arbitration'
+  Structuring 'flex_counter_NUM_CNT_BITS6'
+  Mapping 'flex_counter_NUM_CNT_BITS6'
+  Structuring 'can_crc'
+  Mapping 'can_crc'
+  Structuring 'acceptance_filter'
+  Mapping 'acceptance_filter'
+  Structuring 'flex_counter_NUM_CNT_BITS4_5'
+  Mapping 'flex_counter_NUM_CNT_BITS4_5'
+  Structuring 'can_register'
+  Mapping 'can_register'
+  Structuring 'Command_FIFO_storage'
+  Mapping 'Command_FIFO_storage'
+  Structuring 'Sensor_FIFO_storage'
+  Mapping 'Sensor_FIFO_storage'
+  Structuring 'Control_Unit'
+  Mapping 'Control_Unit'
+  Structuring 'AHB_Slave'
+  Mapping 'AHB_Slave'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1552041.0      0.00       0.0      29.5                          
+    0:00:05 1555281.0      0.00       0.0      18.3                          
+    0:00:05 1556865.0      0.00       0.0      11.5                          
+    0:00:05 1558377.0      0.00       0.0       5.4                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559817.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+    0:00:06 1559097.0      0.00       0.0       0.0                          
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+# Step 4: Output reports
+report_timing -path full -delay max -max_paths 1 -nworst 1 > reports/AHB2CAN_top.rep
+report_area >> reports/AHB2CAN_top.rep
+report_power -hier >> reports/AHB2CAN_top.rep
+# Step 5: Output final VHDL and Verilog files
+write_file -format verilog -hierarchy -output "mapped/AHB2CAN_top.v"
+Writing verilog file '/home/ecegrid/a/mg43/ece337/ECE337_Project/mapped/AHB2CAN_top.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+echo "\nScript Done\n"
+
+Script Done
+
+echo "\nChecking Design\n"
+
+Checking Design
+
+check_design
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP1
+Date:        Wed Dec 13 15:42:22 2017
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    109
+    Unconnected ports (LINT-28)                                    39
+    Feedthrough (LINT-29)                                          70
+
+Cells                                                              36
+    Connected to power or ground (LINT-32)                         27
+    Nets connected to multiple pins on same cell (LINT-33)          9
+--------------------------------------------------------------------------------
+
+Warning: In design 'AHB_Slave', port 'HADDR[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HADDR[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', port 'HWDATA[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'data_size[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'data_size[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'data_size[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'burst_size[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'burst_size[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'burst_size[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'Control_Unit', port 'sensor_fifo_full' is not connected to any nets. (LINT-28)
+Warning: In design 'AHB_Slave', input port 'HADDR[31]' is connected directly to output port 'address[15]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[14]' is connected directly to output port 'address[14]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[13]' is connected directly to output port 'address[13]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[12]' is connected directly to output port 'address[12]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[11]' is connected directly to output port 'address[11]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[10]' is connected directly to output port 'address[10]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[9]' is connected directly to output port 'address[9]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[8]' is connected directly to output port 'address[8]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[7]' is connected directly to output port 'address[7]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[6]' is connected directly to output port 'address[6]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[5]' is connected directly to output port 'address[5]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[4]' is connected directly to output port 'address[4]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[3]' is connected directly to output port 'address[3]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[2]' is connected directly to output port 'address[2]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[1]' is connected directly to output port 'address[1]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HADDR[0]' is connected directly to output port 'address[0]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[15]' is connected directly to output port 'command_data[15]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[14]' is connected directly to output port 'command_data[14]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[13]' is connected directly to output port 'command_data[13]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[12]' is connected directly to output port 'command_data[12]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[11]' is connected directly to output port 'command_data[11]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[10]' is connected directly to output port 'command_data[10]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[9]' is connected directly to output port 'command_data[9]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[8]' is connected directly to output port 'command_data[8]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[7]' is connected directly to output port 'command_data[7]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[6]' is connected directly to output port 'command_data[6]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[5]' is connected directly to output port 'command_data[5]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[4]' is connected directly to output port 'command_data[4]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[3]' is connected directly to output port 'command_data[3]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[2]' is connected directly to output port 'command_data[2]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[1]' is connected directly to output port 'command_data[1]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HWDATA[0]' is connected directly to output port 'command_data[0]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HBURST[2]' is connected directly to output port 'burst_size[2]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HBURST[1]' is connected directly to output port 'burst_size[1]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HBURST[0]' is connected directly to output port 'burst_size[0]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HSIZE[2]' is connected directly to output port 'data_size[2]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HSIZE[1]' is connected directly to output port 'data_size[1]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'HSIZE[0]' is connected directly to output port 'data_size[0]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[31]' is connected directly to output port 'HRDATA[31]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[30]' is connected directly to output port 'HRDATA[30]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[29]' is connected directly to output port 'HRDATA[29]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[28]' is connected directly to output port 'HRDATA[28]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[27]' is connected directly to output port 'HRDATA[27]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[26]' is connected directly to output port 'HRDATA[26]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[25]' is connected directly to output port 'HRDATA[25]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[24]' is connected directly to output port 'HRDATA[24]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[23]' is connected directly to output port 'HRDATA[23]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[22]' is connected directly to output port 'HRDATA[22]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[21]' is connected directly to output port 'HRDATA[21]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[20]' is connected directly to output port 'HRDATA[20]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[19]' is connected directly to output port 'HRDATA[19]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[18]' is connected directly to output port 'HRDATA[18]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[17]' is connected directly to output port 'HRDATA[17]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[16]' is connected directly to output port 'HRDATA[16]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[15]' is connected directly to output port 'HRDATA[15]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[14]' is connected directly to output port 'HRDATA[14]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[13]' is connected directly to output port 'HRDATA[13]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[12]' is connected directly to output port 'HRDATA[12]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[11]' is connected directly to output port 'HRDATA[11]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[10]' is connected directly to output port 'HRDATA[10]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[9]' is connected directly to output port 'HRDATA[9]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[8]' is connected directly to output port 'HRDATA[8]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[7]' is connected directly to output port 'HRDATA[7]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[6]' is connected directly to output port 'HRDATA[6]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[5]' is connected directly to output port 'HRDATA[5]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[4]' is connected directly to output port 'HRDATA[4]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[3]' is connected directly to output port 'HRDATA[3]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[2]' is connected directly to output port 'HRDATA[2]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[1]' is connected directly to output port 'HRDATA[1]'. (LINT-29)
+Warning: In design 'AHB_Slave', input port 'sensor_data[0]' is connected directly to output port 'HRDATA[0]'. (LINT-29)
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Command_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'can_register', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[5]' is connected to logic 0. 
+Warning: In design 'can_register', a pin on submodule 'TX_SR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'tx_enable' is connected to logic 1. 
+Warning: In design 'can_register', a pin on submodule 'RX_SR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rx_enable' is connected to logic 1. 
+Warning: In design 'acceptance_filter', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'acceptance_filter', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 1. 
+Warning: In design 'acceptance_filter', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'acceptance_filter', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'arbitration', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'arbitration', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'arbitration', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'arbitration', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'AHB2CAN_top', the same net is connected to more than one pin on submodule 'SFIFO'. (LINT-33)
+   Net 'HCLK' is connected to pins 'write_clk', 'read_clk''.
+Warning: In design 'AHB2CAN_top', the same net is connected to more than one pin on submodule 'CFIFO'. (LINT-33)
+   Net 'HCLK' is connected to pins 'write_clk', 'read_clk''.
+Warning: In design 'Sensor_FIFO_storage', the same net is connected to more than one pin on submodule 'READ_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'Sensor_FIFO_storage', the same net is connected to more than one pin on submodule 'WRITE_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'Command_FIFO_storage', the same net is connected to more than one pin on submodule 'READ_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'Command_FIFO_storage', the same net is connected to more than one pin on submodule 'WRITE_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'acceptance_filter', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[3]', 'rollover_val[2]'', 'rollover_val[1]'.
+Warning: In design 'arbitration', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[3]', 'rollover_val[1]''.
+Warning: In design 'arbitration', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[0]''.
+quit
+
+Thank you...
+Done
+
+

@@ -1,0 +1,86 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work/.tb_ahb_to_can 
+# Start time: 19:28:30 on Nov 30,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_ahb_to_can(fast)
+# ** Warning: (vsim-PLI-3003) source/tb_ahb_to_can.sv(275): [TOFD] - System task or function '$diplay' is not defined.
+#         Region: /tb_ahb_to_can/data_phase/#ublk#204613486#258
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+add wave -position insertpoint sim:/tb_ahb_to_can/*
+add wave -position insertpoint sim:/tb_ahb_to_can/*
+run 2us
+# 
+# ||||||||||||||||||||||
+# | AHB DATA  Time:                    0ns 
+# |     HWRITE = 1    
+# |     HDATA  = 2cf096c3    
+# ||||||||||||||||||||||
+# 
+# Write cycle started at Time:                    0ns
+#     SOF started at Time:                    0ns
+# 
+# ||||||||||||||||||||||
+# | AHB DATA  Time:                    0ns 
+# |     HWRITE = 0    
+# |     HDATA  = 2cfc96c3    
+# ||||||||||||||||||||||
+# 
+#     SOF ended at Time:                    0ns
+#     Arbitration started at Time:                    0ns
+#     Arbitration Ended cycle Time:                    0ns
+#     Control field started at Time:                    0ns
+#     Control field finished reading at Time:                    0ns
+#     Data cycle started at Time:                    0ns
+#     Data cycle finihsed reading at Time:                    0ns
+#     Value read: 0000101100111100001001011011000011010000000000
+#     CRC cycle started at Time:                    0ns
+#     Code calculated 011010000000111 , at Time:                   0ns
+#     CRC cycle finished reading (000010010001100) at Time:                    0ns
+#     Ack = 1
+#     ACK cycle started at Time:                    0ns
+#     EOF cycle started at Time:                    0ns
+#     EOF cycle finished at Time:                    0ns
+# Write cycle ended at Time:                    0ns
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:                    0ns
+#     SOF started at Time:                    0ns
+#     SOF ended at Time:                    0ns
+#     Arbitration started at Time:                    0ns
+#     Arbitration Ended cycle Time:                    0ns
+#     Control field started at Time:                    0ns
+#     Control field finished writing at Time:                 1000ns
+#     Data cycle started at Time:                 1000ns
+#     Data cycle finihsed writing at Time:                 1000ns
+#     CRC cycle started at Time:                 1000ns
+#     Code calculated 010110110000001 , at Time:                1000ns
+#     CRC cycle writing at Time:                 1000ns
+#     ACK cycle started at Time:                 1000ns
+#     ACK cycle finished reading at Time:                 1000ns
+#     EOF cycle started at Time:                 1000ns
+#     EOF cycle finished at Time:                 1000ns
+# Read cycle ended at Time:                 1000ns
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:                 1000ns
+#     SOF started at Time:                 1000ns
+#     SOF ended at Time:                 1000ns
+#     Arbitration started at Time:                 1000ns
+#     Arbitration Ended cycle Time:                 1000ns
+#     Control field started at Time:                 1000ns
+#     Control field finished reading at Time:                 1000ns
+#     Data cycle started at Time:                 1000ns
+# End time: 19:31:19 on Nov 30,2017, Elapsed time: 0:02:49
+# Errors: 0, Warnings: 2

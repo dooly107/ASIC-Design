@@ -1,0 +1,28 @@
+QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+Start time: 15:42:25 on Dec 13,2017
+vlog -sv -work mapped_work mapped/AHB2CAN_top.v 
+-- Compiling module AHB_Slave
+-- Compiling module Control_Unit
+-- Compiling module flex_counter_NUM_CNT_BITS4_5
+-- Compiling module flex_counter_NUM_CNT_BITS4_4
+-- Compiling module Sensor_FIFO_storage
+-- Compiling module flex_counter_NUM_CNT_BITS4_3
+-- Compiling module flex_counter_NUM_CNT_BITS4_2
+-- Compiling module Command_FIFO_storage
+-- Compiling module flex_counter_NUM_CNT_BITS4_1
+-- Compiling module acceptance_filter
+-- Compiling module can_crc
+-- Compiling module flex_counter_NUM_CNT_BITS6
+-- Compiling module flex_pts_sr_NUM_BITS32_SHIFT_MSB1
+-- Compiling module tx_sr
+-- Compiling module flex_stp_sr_NUM_BITS32_SHIFT_MSB1
+-- Compiling module rx_sr
+-- Compiling module flex_counter_NUM_CNT_BITS4_0
+-- Compiling module arbitration
+-- Compiling module can_register
+-- Compiling module AHB2CAN_top
+
+Top level modules:
+	AHB2CAN_top
+End time: 15:42:25 on Dec 13,2017, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

@@ -1,0 +1,2 @@
+INCLUDE /home/ecegrid/a/mg43/cds.lib
+DEFINE Project_Layout ~/ece337//Project_Layout

@@ -1,0 +1,150 @@
+// $Id: $
+// File name:   tb_AHB_Slave.sv
+// Created:     11/14/2017
+// Author:      Vaibhav Ramachandran
+// Lab Section: 337-01
+// Version:     1.0  Initial Design Entry
+// Description: AHB Slave module test bench
+`timescale 1ns / 10ps
+module tb_AHB_Slave();
+   localparam CLK_PERIOD = 10;
+   reg tb_clk;
+   reg tb_n_rst;
+   localparam IDLE_TRANS = 2'b00;
+   localparam BUSY_TRANS = 2'b01;
+   localparam NONSEQ_TRANS = 2'b10;
+   localparam SEQ_TRANS = 2'b11;
+   //HBURST is always SINGLE_BURST
+   localparam SINGLE_BURST = 3'b000;
+   localparam INCR_BURST = 3'b001;
+   localparam WRAP4_BURST = 3'b010;
+   localparam INCR4_BURST = 3'b011;
+   localparam WRAP8_BURST = 3'b100;
+   localparam INCR8_BURST = 3'b101;
+   localparam WRAP16_BURST = 3'b110;
+   localparam INCR16_BURST = 3'b111;
+//inputs
+   reg tb_HWRITE;
+   reg tb_HSEL;
+   reg [31:0] tb_HADDR;
+   reg [31:0] tb_HWDATA;
+   reg [1:0] 	tb_HTRANS ;
+   reg [2:0] 	tb_HBURST;
+   reg [2:0] 	tb_HSIZE;
+   reg [31:0] 	HRESP;
+   reg 		tb_HREADYOUT;
+   
+
+   reg [31:0] 	tb_sensor_data;
+   reg 		tb_slave_wait;
+
+   //outputs
+   reg 	[31:0]	tb_HRDATA;
+   reg 		tb_HRESP, tb_HREADYOUT;
+
+   reg [15:0] 	tb_command_data, tb_address;
+   reg 		tb_rwait, tb_wwait, tb_renable, tb_wenable;
+   reg [2:0] 	tb_data_size, tb_burst_size;
+
+   AHB_SLAVE DUT (.HCLK(tb_clk), 
+		  .HRESETn(tb_n_rst),
+		  .HWRITE(tb_HWRITE),
+		  .HSEL(tb_HSEL),
+		  .HADDR(tb_HADDR),
+		  .HWDATA(tb_HWDATA),
+		  .HTRANS(tb_HTRANS),
+		  .HBURST(tb_HBURST),
+		  .HSIZE(tb_HSIZE),
+		  .HRDATA(tb_HRDATA),
+		  .HRESP(tb_HRESP),
+		  .HREADYOUT(tb_HREADYOUT),
+		  .sensor_data(tb_sensor_data),
+		  .slave_wait(tb_slave_wait),
+		  .command_data(tb_command_data),
+		  .address(tb_address),
+		  .rwait(tb_rwait),
+		  .wwait(tb_wwait),
+		  .renable(tb_renable),
+		  .wenable(tb_wenable),
+		  .data_size(tb_data_size),
+		  .burst_size(tb_burst_size));
+   
+
+   always
+     begin
+	tb_clk = 1'b0;
+	#(CLK_PERIOD/2.0);
+	tb_clk = 1'b1;
+	#(CLK_PERIOD/2.0);
+     end
+
+   
+   task ahb_lite_process_master();//from ahb to command sensor
+      //on the positive edge it will send the value and then reset them on the next clk cycle
+      input HWRITE;
+      input[14:0] HADDR;
+      input [15:0] HWDATA;
+      input [1:0] HTRANS ;
+      input [2:0] HBURST;
+      input [2:0] HSIZE;
+      input 	  HSEL;
+      begin
+	 @(posedge tb_clk);
+	 tb_HWRITE = HWRITE;
+	 tb_HADDR = HADDR;
+	 tb_HWDATA = HWDATA;
+	 tb_HTRANS = HTRANS;
+	 tb_HBURST = HBURST;
+	 tb_HSIZE = HSIZE;
+	 tb_HSEL = HSEL;
+	 $display("|||||||||||||||");
+	 $display("Data send from master at Time: $t", $time);
+	 $display("HWRITE = %b", HWRITE);
+	 $display("HWDATA = %b", HWDATA);
+	 $diplay("HTRANS = %b", HTRANS);
+	 $diplay("HBURST = %b", HBURST);
+	 $display("HSIZE = %b", HSIZE);
+	 $display("HSEL = %b", HSEL);
+	 $dipsplay("||||||||||||||");
+	 @(posedge tb_clk);
+	 tb_HWRITE =0;
+	 tb_HADDR = 0;
+	 tb_HWDATA = 0;
+	 tb_HTRANS = 0;
+	 tb_HBURST = 0;
+	 tb_HSIZE = 0;
+	 tb_HSEL = 0;
+	 	 	 
+      end
+   endtask //
+
+   task can_bus_responce();//on the positive edge it will send the value and then reset them on the next clk cycle
+      input[31:0] sensor_data;
+      input slave_wait;
+      begin
+	 @(posedge tb_clk);
+	 tb_sensor_data = sensor_data;
+	 tb_slave_wait = slave_wait;
+	 $display("|||||||||||||||");
+	 $display("Data send from Sensor Fifo at Time: $t", $time);
+	 $display("Sensor Data = %b", sensor_data);
+	 $display("Slave Wait = %b", slave_wait);
+	 $diplay("||||||||||||||||");
+	 @(posedge tb_clk);
+	 tb_sensor_data = '0;
+	 tb_slave_wait = 0;
+      end
+   endtask // can_bus_responce
+   
+      initial
+	begin
+	   tb_n_rst = 0;
+	   //sends data from the master
+	   //Inputs go in the order they are declared in the task
+	   ahb_lite_process_master('0,'0,'0,'0,'0,'0,'0);
+	   //sends data from the fifo and controller to the slave
+	   can_bus_responce('0,'0);
+	   
+	end
+   
+endmodule 

@@ -1,0 +1,7 @@
+// $Id: $
+// File name:   tb_can_register.sv
+// Created:     12/2/2017
+// Author:      Miguel Kulisic
+// Lab Section: 1
+// Version:     1.0  Initial Design Entry
+// Description: test bench for the control module

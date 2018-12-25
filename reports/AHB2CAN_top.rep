@@ -1,0 +1,146 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : AHB2CAN_top
+Version: K-2015.06-SP1
+Date   : Wed Dec 13 15:42:22 2017
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: CANbus/state_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: tx_data (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  CANbus/state_reg[1]/CLK (DFFSR)                         0.00       0.00 r
+  CANbus/state_reg[1]/Q (DFFSR)                           0.78       0.78 f
+  CANbus/U413/Y (INVX1)                                   0.30       1.07 r
+  CANbus/U412/Y (NAND3X1)                                 0.37       1.45 f
+  CANbus/U371/Y (NAND3X1)                                 0.46       1.91 r
+  CANbus/U370/Y (OR2X1)                                   0.47       2.38 r
+  CANbus/U369/Y (NOR2X1)                                  0.28       2.66 f
+  CANbus/U367/Y (NOR2X1)                                  0.28       2.93 r
+  CANbus/TX_SR/load_enable (tx_sr)                        0.00       2.93 r
+  CANbus/TX_SR/TX_SR/load_enable (flex_pts_sr_NUM_BITS32_SHIFT_MSB1)
+                                                          0.00       2.93 r
+  CANbus/TX_SR/TX_SR/U34/Y (INVX4)                        0.58       3.52 f
+  CANbus/TX_SR/TX_SR/U38/Y (MUX2X1)                       0.32       3.84 f
+  CANbus/TX_SR/TX_SR/U37/Y (NAND2X1)                      0.16       4.00 r
+  CANbus/TX_SR/TX_SR/serial_out (flex_pts_sr_NUM_BITS32_SHIFT_MSB1)
+                                                          0.00       4.00 r
+  CANbus/TX_SR/tx_out (tx_sr)                             0.00       4.00 r
+  CANbus/txd (can_register)                               0.00       4.00 r
+  tx_data (out)                                           0.00       4.00 r
+  data arrival time                                                  4.00
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : AHB2CAN_top
+Version: K-2015.06-SP1
+Date   : Wed Dec 13 15:42:22 2017
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                         1070
+Number of nets:                          4775
+Number of cells:                         3805
+Number of combinational cells:           2862
+Number of sequential cells:               924
+Number of macros/black boxes:               0
+Number of buf/inv:                        870
+Number of references:                       5
+
+Combinational area:             793737.000000
+Buf/Inv area:                   128160.000000
+Noncombinational area:          765360.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               1559097.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : AHB2CAN_top
+Version: K-2015.06-SP1
+Date   : Wed Dec 13 15:42:22 2017
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+AHB2CAN_top                              28.269   74.828  459.923  103.097 100.0
+  CANbus (can_register)                   4.312   25.750  143.394   30.062  29.2
+    ARBITRATION_module (arbitration)      0.523    1.406    8.588    1.929   1.9
+      FLEX_COUNTER (flex_counter_NUM_CNT_BITS4_0)
+                                          0.252    0.725    5.679    0.977   0.9
+    RX_SR (rx_sr)                      9.83e-02    4.510   22.198    4.608   4.5
+      RX_SR (flex_stp_sr_NUM_BITS32_SHIFT_MSB1)
+                                       9.83e-02    4.510   22.198    4.608   4.5
+    TX_SR (tx_sr)                         1.215    6.538   23.017    7.753   7.5
+      TX_SR (flex_pts_sr_NUM_BITS32_SHIFT_MSB1)
+                                          1.215    6.538   23.017    7.753   7.5
+    FLEX_COUNTER (flex_counter_NUM_CNT_BITS6)
+                                          0.342    1.138    8.301    1.480   1.4
+    CRC_module (can_crc)                  0.000    1.535   10.405    1.535   1.5
+    ACCEPT (acceptance_filter)         9.34e-02    0.983    9.767    1.076   1.0
+      FLEX_COUNTER (flex_counter_NUM_CNT_BITS4_1)
+                                          0.000    0.512    5.679    0.512   0.5
+  CFIFO (Command_FIFO_storage)           11.289   23.191  144.355   34.479  33.4
+    WRITE_COUNTER (flex_counter_NUM_CNT_BITS4_2)
+                                          0.000    0.512    5.679    0.512   0.5
+    READ_COUNTER (flex_counter_NUM_CNT_BITS4_3)
+                                          0.000    0.512    5.679    0.512   0.5
+  SFIFO (Sensor_FIFO_storage)            11.289   23.190  144.355   34.479  33.4
+    WRITE_COUNTER (flex_counter_NUM_CNT_BITS4_4)
+                                          0.000    0.512    5.679    0.512   0.5
+    READ_COUNTER (flex_counter_NUM_CNT_BITS4_5)
+                                          0.000    0.512    5.679    0.512   0.5
+  CU (Control_Unit)                    1.12e-03    0.821   23.498    0.822   0.8
+  AHBS (AHB_Slave)                        1.378    1.877    4.321    3.255   3.2
+1

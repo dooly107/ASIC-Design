@@ -1,0 +1,864 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_AHB2CAN_top 
+# ** Warning: (vsim-3201) Problem loading Tcl init file: ./init.tcl.
+# Start time: 20:23:43 on Dec 10,2017
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_AHB2CAN_top(fast)
+# Loading work.AHB2CAN_top(fast)
+# Loading work.AHB_Slave(fast)
+# Loading work.Control_Unit(fast)
+# Loading work.Sensor_FIFO_storage(fast)
+# Loading work.flex_counter(fast)
+# Loading work.Command_FIFO_storage(fast)
+# Loading work.can_register(fast)
+# Loading work.acceptance_filter(fast)
+# Loading work.can_crc(fast)
+# Loading work.flex_counter(fast__1)
+# Loading work.tx_sr(fast)
+# Loading work.flex_pts_sr(fast)
+# Loading work.rx_sr(fast)
+# Loading work.flex_stp_sr(fast)
+# Loading work.arbitration(fast)
+add wave -position insertpoint sim:/tb_AHB2CAN_top/*
+add wave -position insertpoint sim:/tb_AHB2CAN_top/TEST/CANbus/*
+run 20000 n
+# Invalid time value: 20000 n
+run 20000 ns
+# Write cycle started at Time:                    0ps
+#     SOF started at Time:                    0ps
+#     SOF ended at Time:                 5000ps
+#     Arbitration started at Time:                 5000ps
+# |||||||||||||||
+# Data send from master at Time :                15000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001010101010101010
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000000001
+# ||||||||||||||
+# |||||||||||||||
+# Data send from master at Time :               105000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001000011000000111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000010011
+# ||||||||||||||
+#     Arbitration is won
+#     Arbitration Ended cycle Time:               115000ps
+#     Control field started at Time:               115000ps
+#     Control field finished reading at Time:               195000ps
+#     Data cycle started at Time:               195000ps
+# |||||||||||||||
+# Data send from master at Time :               195000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# |||||||||||||||
+# Data send from master at Time :               285000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001001111000110110
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# |||||||||||||||
+# Data send from master at Time :               375000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# |||||||||||||||
+# Data send from master at Time :               465000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001001111000110110
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     Data read correctly
+#     Data cycle finihsed writing at Time:               515000ps
+#     Value read: 00000000000000011010101010101010
+#     CRC cycle started at Time:               515000ps
+#     Code calculated 110100111011101 , at Time:              515000ps
+# |||||||||||||||
+# Data send from master at Time :               555000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# |||||||||||||||
+# Data send from master at Time :               645000ps
+# HWRITE = 1
+# HWDATA = 00000000000000001000000000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     CRC cycle finished reading (110100111011101) at Time:                    0ps
+#     Ack = 0
+#     ACK cycle started at Time:                    0ps
+#     EOF cycle started at Time:               675000ps
+#     EOF cycle finished at Time:               685000ps
+# Write cycle ended at Time:               685000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:               685000ps
+#     SOF started at Time:               685000ps
+#     SOF ended at Time:               695000ps
+#     Arbitration started at Time:               695000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:               805000ps
+#     Control field started at Time:               805000ps
+#     Control field finished writing at Time:               885000ps
+#     Data cycle started at Time:               885000ps
+#     Data cycle finihsed reading at Time:              1205000ps
+#     Data read 80199e00
+#     CRC cycle started at Time:              1205000ps
+#     Code calculated 101110101110111 , at Time:             1205000ps
+#     CRC cycle writing at Time:              1355000ps
+#     ACK cycle started at Time:                 1000ps
+#     ACK cycle finished at Time:              1365000ps
+# ***************************
+# ***************************
+# ***************************
+#     ACK cycle finished reading at Time:              1365000ps
+#     EOF cycle started at Time:              1365000ps
+#     EOF cycle finished at Time:              1375000ps
+# Read cycle ended at Time:              1375000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              1375000ps
+#     SOF started at Time:              1375000ps
+#     SOF ended at Time:              1385000ps
+#     Arbitration started at Time:              1385000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              1495000ps
+#     Control field started at Time:              1495000ps
+#     Control field finished reading at Time:              1575000ps
+#     Data cycle started at Time:              1575000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              1895000ps
+#     Value read: 00000000000100111000011000000111
+#     CRC cycle started at Time:              1895000ps
+#     Code calculated 100010101110000 , at Time:             1895000ps
+#     CRC cycle finished reading (100010101110000) at Time:                 2000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 2000ps
+#     EOF cycle started at Time:              2055000ps
+#     EOF cycle finished at Time:              2065000ps
+# Write cycle ended at Time:              2065000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              2065000ps
+#     SOF started at Time:              2065000ps
+#     SOF ended at Time:              2075000ps
+#     Arbitration started at Time:              2075000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              2185000ps
+#     Control field started at Time:              2185000ps
+#     Control field finished writing at Time:              2265000ps
+#     Data cycle started at Time:              2265000ps
+#     Data cycle finihsed reading at Time:              2585000ps
+#     Data read 80199e03
+#     CRC cycle started at Time:              2585000ps
+#     Code calculated 101110101110100 , at Time:             2585000ps
+#     CRC cycle writing at Time:              2735000ps
+#     ACK cycle started at Time:                 2000ps
+#     ACK cycle finished reading at Time:              2745000ps
+#     EOF cycle started at Time:              2745000ps
+#     EOF cycle finished at Time:              2755000ps
+# Read cycle ended at Time:              2755000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              2755000ps
+#     SOF started at Time:              2755000ps
+#     SOF ended at Time:              2765000ps
+#     Arbitration started at Time:              2765000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              2875000ps
+#     Control field started at Time:              2875000ps
+#     Control field finished reading at Time:              2955000ps
+#     Data cycle started at Time:              2955000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              3275000ps
+#     Value read: 00000000000111111001111000110111
+#     CRC cycle started at Time:              3275000ps
+#     Code calculated 101110101000000 , at Time:             3275000ps
+#     CRC cycle finished reading (101110101000000) at Time:                 3000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 3000ps
+#     EOF cycle started at Time:              3435000ps
+#     EOF cycle finished at Time:              3445000ps
+# Write cycle ended at Time:              3445000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              3445000ps
+#     SOF started at Time:              3445000ps
+#     SOF ended at Time:              3455000ps
+#     Arbitration started at Time:              3455000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              3565000ps
+#     Control field started at Time:              3565000ps
+#     Control field finished writing at Time:              3645000ps
+#     Data cycle started at Time:              3645000ps
+#     Data cycle finihsed reading at Time:              3965000ps
+#     Data read 98199e03
+#     CRC cycle started at Time:              3965000ps
+#     Code calculated 101110101110100 , at Time:             3965000ps
+#     CRC cycle writing at Time:              4115000ps
+#     ACK cycle started at Time:                 4000ps
+#     ACK cycle finished reading at Time:              4125000ps
+#     EOF cycle started at Time:              4125000ps
+#     EOF cycle finished at Time:              4135000ps
+# Read cycle ended at Time:              4135000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              4135000ps
+#     SOF started at Time:              4135000ps
+#     SOF ended at Time:              4145000ps
+#     Arbitration started at Time:              4145000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              4255000ps
+#     Control field started at Time:              4255000ps
+#     Control field finished reading at Time:              4335000ps
+#     Data cycle started at Time:              4335000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              4655000ps
+#     Value read: 00000000000111111001111000110110
+#     CRC cycle started at Time:              4655000ps
+#     Code calculated 101110101000001 , at Time:             4655000ps
+#     CRC cycle finished reading (101110101000001) at Time:                 4000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 4000ps
+#     EOF cycle started at Time:              4815000ps
+#     EOF cycle finished at Time:              4825000ps
+# Write cycle ended at Time:              4825000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              4825000ps
+#     SOF started at Time:              4825000ps
+#     SOF ended at Time:              4835000ps
+#     Arbitration started at Time:              4835000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              4945000ps
+#     Control field started at Time:              4945000ps
+#     Control field finished writing at Time:              5025000ps
+#     Data cycle started at Time:              5025000ps
+#     Data cycle finihsed reading at Time:              5345000ps
+#     Data read 80198603
+#     CRC cycle started at Time:              5345000ps
+#     Code calculated 100010101110100 , at Time:             5345000ps
+#     CRC cycle writing at Time:              5495000ps
+#     ACK cycle started at Time:                 5000ps
+#     ACK cycle finished reading at Time:              5505000ps
+#     EOF cycle started at Time:              5505000ps
+#     EOF cycle finished at Time:              5515000ps
+# Read cycle ended at Time:              5515000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              5515000ps
+#     SOF started at Time:              5515000ps
+#     SOF ended at Time:              5525000ps
+#     Arbitration started at Time:              5525000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              5635000ps
+#     Control field started at Time:              5635000ps
+#     Control field finished reading at Time:              5715000ps
+#     Data cycle started at Time:              5715000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              6035000ps
+#     Value read: 00000000000111111001111000110111
+#     CRC cycle started at Time:              6035000ps
+#     Code calculated 101110101000000 , at Time:             6035000ps
+#     CRC cycle finished reading (101110101000000) at Time:                 6000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 6000ps
+#     EOF cycle started at Time:              6195000ps
+#     EOF cycle finished at Time:              6205000ps
+# Write cycle ended at Time:              6205000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              6205000ps
+#     SOF started at Time:              6205000ps
+#     SOF ended at Time:              6215000ps
+#     Arbitration started at Time:              6215000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              6325000ps
+#     Control field started at Time:              6325000ps
+#     Control field finished writing at Time:              6405000ps
+#     Data cycle started at Time:              6405000ps
+# |||||||||||||||
+# Data send from master at Time :              6685000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME              6720000 is 80199e00
+#     Data cycle finihsed reading at Time:              6725000ps
+#     Data read 8e198603
+#     CRC cycle started at Time:              6725000ps
+#     Code calculated 100010101110100 , at Time:             6725000ps
+#     CRC cycle writing at Time:              6875000ps
+#     ACK cycle started at Time:                 6000ps
+#     ACK cycle finished reading at Time:              6885000ps
+#     EOF cycle started at Time:              6885000ps
+#     EOF cycle finished at Time:              6895000ps
+# Read cycle ended at Time:              6895000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              6895000ps
+#     SOF started at Time:              6895000ps
+#     SOF ended at Time:              6905000ps
+#     Arbitration started at Time:              6905000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              7015000ps
+#     Control field started at Time:              7015000ps
+#     Control field finished reading at Time:              7095000ps
+#     Data cycle started at Time:              7095000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              7415000ps
+#     Value read: 00000000000111111001111000110110
+#     CRC cycle started at Time:              7415000ps
+#     Code calculated 101110101000001 , at Time:             7415000ps
+#     CRC cycle finished reading (101110101000001) at Time:                 7000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 7000ps
+#     EOF cycle started at Time:              7575000ps
+#     EOF cycle finished at Time:              7585000ps
+# Write cycle ended at Time:              7585000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              7585000ps
+#     SOF started at Time:              7585000ps
+#     SOF ended at Time:              7595000ps
+#     Arbitration started at Time:              7595000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              7705000ps
+#     Control field started at Time:              7705000ps
+# |||||||||||||||
+# Data send from master at Time :              7725000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME              7760000 is 80199e03
+#     Control field finished writing at Time:              7785000ps
+#     Data cycle started at Time:              7785000ps
+#     Data cycle finihsed reading at Time:              8105000ps
+#     Data read 83330c07
+#     CRC cycle started at Time:              8105000ps
+#     Code calculated 100111101110000 , at Time:             8105000ps
+#     CRC cycle writing at Time:              8255000ps
+#     ACK cycle started at Time:                 8000ps
+#     ACK cycle finished reading at Time:              8265000ps
+#     EOF cycle started at Time:              8265000ps
+#     EOF cycle finished at Time:              8275000ps
+# Read cycle ended at Time:              8275000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              8275000ps
+#     SOF started at Time:              8275000ps
+#     SOF ended at Time:              8285000ps
+#     Arbitration started at Time:              8285000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              8395000ps
+#     Control field started at Time:              8395000ps
+#     Control field finished reading at Time:              8475000ps
+#     Data cycle started at Time:              8475000ps
+# |||||||||||||||
+# Data send from master at Time :              8765000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     Data read correctly
+#     Data cycle finihsed writing at Time:              8795000ps
+#     Value read: 00000000000111111001111000110111
+#     CRC cycle started at Time:              8795000ps
+#     Code calculated 101110101000000 , at Time:             8795000ps
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME              8800000 is 98199e03
+#     CRC cycle finished reading (101110101000000) at Time:                 8000ps
+#     Ack = 0
+#     ACK cycle started at Time:                 8000ps
+#     EOF cycle started at Time:              8955000ps
+#     EOF cycle finished at Time:              8965000ps
+# Write cycle ended at Time:              8965000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:              8965000ps
+#     SOF started at Time:              8965000ps
+#     SOF ended at Time:              8975000ps
+#     Arbitration started at Time:              8975000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:              9085000ps
+#     Control field started at Time:              9085000ps
+#     Control field finished writing at Time:              9165000ps
+#     Data cycle started at Time:              9165000ps
+#     Data cycle finihsed reading at Time:              9485000ps
+#     Data read 801986e3
+#     CRC cycle started at Time:              9485000ps
+#     Code calculated 100010110010100 , at Time:             9485000ps
+#     CRC cycle writing at Time:              9635000ps
+#     ACK cycle started at Time:                 9000ps
+#     ACK cycle finished reading at Time:              9645000ps
+#     EOF cycle started at Time:              9645000ps
+#     EOF cycle finished at Time:              9655000ps
+# Read cycle ended at Time:              9655000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              9655000ps
+#     SOF started at Time:              9655000ps
+#     SOF ended at Time:              9665000ps
+#     Arbitration started at Time:              9665000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:              9775000ps
+#     Control field started at Time:              9775000ps
+# |||||||||||||||
+# Data send from master at Time :              9805000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME              9840000 is 80198603
+#     Control field finished reading at Time:              9855000ps
+#     Data cycle started at Time:              9855000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             10175000ps
+#     Value read: 00000000000111111000000000110111
+#     CRC cycle started at Time:             10175000ps
+#     Code calculated 100001101000000 , at Time:            10175000ps
+#     CRC cycle finished reading (100001101000000) at Time:                10000ps
+#     Ack = 0
+#     ACK cycle started at Time:                10000ps
+#     EOF cycle started at Time:             10335000ps
+#     EOF cycle finished at Time:             10345000ps
+# Write cycle ended at Time:             10345000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Read cycle started at Time:             10345000ps
+#     SOF started at Time:             10345000ps
+#     SOF ended at Time:             10355000ps
+#     Arbitration started at Time:             10355000ps
+#     Arbitration is lost
+#     Arbitration Ended cycle Time:             10465000ps
+#     Control field started at Time:             10465000ps
+#     Control field finished writing at Time:             10545000ps
+#     Data cycle started at Time:             10545000ps
+# |||||||||||||||
+# Data send from master at Time :             10845000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     Data cycle finihsed reading at Time:             10865000ps
+#     Data read 87d98603
+#     CRC cycle started at Time:             10865000ps
+#     Code calculated 100010101110100 , at Time:            10865000ps
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME             10880000 is 8e198603
+#     CRC cycle writing at Time:             11015000ps
+#     ACK cycle started at Time:                11000ps
+#     ACK cycle finished reading at Time:             11025000ps
+#     EOF cycle started at Time:             11025000ps
+#     EOF cycle finished at Time:             11035000ps
+# Read cycle ended at Time:             11035000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             11035000ps
+#     SOF started at Time:             11035000ps
+#     SOF ended at Time:             11045000ps
+#     Arbitration started at Time:             11045000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             11155000ps
+#     Control field started at Time:             11155000ps
+#     Control field finished reading at Time:             11235000ps
+#     Data cycle started at Time:             11235000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             11555000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             11555000ps
+#     Code calculated 011110010001000 , at Time:            11555000ps
+#     CRC cycle finished reading (011110010001000) at Time:                11000ps
+#     Ack = 0
+#     ACK cycle started at Time:                11000ps
+#     EOF cycle started at Time:             11715000ps
+#     EOF cycle finished at Time:             11725000ps
+# Write cycle ended at Time:             11725000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             11725000ps
+#     SOF started at Time:             11725000ps
+#     SOF ended at Time:             11735000ps
+#     Arbitration started at Time:             11735000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             11845000ps
+#     Control field started at Time:             11845000ps
+# |||||||||||||||
+# Data send from master at Time :             11885000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME             11920000 is 83330c07
+#     Control field finished reading at Time:             11925000ps
+#     Data cycle started at Time:             11925000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             12245000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             12245000ps
+#     Code calculated 011110010001000 , at Time:            12245000ps
+#     CRC cycle finished reading (011110010001000) at Time:                12000ps
+#     Ack = 0
+#     ACK cycle started at Time:                12000ps
+#     EOF cycle started at Time:             12405000ps
+#     EOF cycle finished at Time:             12415000ps
+# Write cycle ended at Time:             12415000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             12415000ps
+#     SOF started at Time:             12415000ps
+#     SOF ended at Time:             12425000ps
+#     Arbitration started at Time:             12425000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             12535000ps
+#     Control field started at Time:             12535000ps
+#     Control field finished reading at Time:             12615000ps
+#     Data cycle started at Time:             12615000ps
+# |||||||||||||||
+# Data send from master at Time :             12925000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             12935000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             12935000ps
+#     Code calculated 011110010001000 , at Time:            12935000ps
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME             12960000 is 801986e3
+#     CRC cycle finished reading (011110010001000) at Time:                13000ps
+#     Ack = 0
+#     ACK cycle started at Time:                13000ps
+#     EOF cycle started at Time:             13095000ps
+#     EOF cycle finished at Time:             13105000ps
+# Write cycle ended at Time:             13105000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             13105000ps
+#     SOF started at Time:             13105000ps
+#     SOF ended at Time:             13115000ps
+#     Arbitration started at Time:             13115000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             13225000ps
+#     Control field started at Time:             13225000ps
+#     Control field finished reading at Time:             13305000ps
+#     Data cycle started at Time:             13305000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             13625000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             13625000ps
+#     Code calculated 011110010001000 , at Time:            13625000ps
+#     CRC cycle finished reading (011110010001000) at Time:                13000ps
+#     Ack = 0
+#     ACK cycle started at Time:                13000ps
+#     EOF cycle started at Time:             13785000ps
+#     EOF cycle finished at Time:             13795000ps
+# Write cycle ended at Time:             13795000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             13795000ps
+#     SOF started at Time:             13795000ps
+#     SOF ended at Time:             13805000ps
+#     Arbitration started at Time:             13805000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             13915000ps
+#     Control field started at Time:             13915000ps
+# |||||||||||||||
+# Data send from master at Time :             13965000ps
+# HWRITE = 0
+# HWDATA = 00000000000000001001111000110111
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000011111
+# ||||||||||||||
+#     Control field finished reading at Time:             13995000ps
+#     Data cycle started at Time:             13995000ps
+# ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||VALUE RETRIEVED AT TIME             14000000 is 87d98603
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             14315000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             14315000ps
+#     Code calculated 011110010001000 , at Time:            14315000ps
+#     CRC cycle finished reading (011110010001000) at Time:                14000ps
+#     Ack = 0
+#     ACK cycle started at Time:                14000ps
+#     EOF cycle started at Time:             14475000ps
+#     EOF cycle finished at Time:             14485000ps
+# Write cycle ended at Time:             14485000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             14485000ps
+#     SOF started at Time:             14485000ps
+#     SOF ended at Time:             14495000ps
+#     Arbitration started at Time:             14495000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             14605000ps
+#     Control field started at Time:             14605000ps
+#     Control field finished reading at Time:             14685000ps
+#     Data cycle started at Time:             14685000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             15005000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             15005000ps
+#     Code calculated 011110010001000 , at Time:            15005000ps
+#     CRC cycle finished reading (011110010001000) at Time:                15000ps
+#     Ack = 0
+#     ACK cycle started at Time:                15000ps
+#     EOF cycle started at Time:             15165000ps
+#     EOF cycle finished at Time:             15175000ps
+# Write cycle ended at Time:             15175000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             15175000ps
+#     SOF started at Time:             15175000ps
+#     SOF ended at Time:             15185000ps
+#     Arbitration started at Time:             15185000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             15295000ps
+#     Control field started at Time:             15295000ps
+#     Control field finished reading at Time:             15375000ps
+#     Data cycle started at Time:             15375000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             15695000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             15695000ps
+#     Code calculated 011110010001000 , at Time:            15695000ps
+#     CRC cycle finished reading (011110010001000) at Time:                15000ps
+#     Ack = 0
+#     ACK cycle started at Time:                15000ps
+#     EOF cycle started at Time:             15855000ps
+#     EOF cycle finished at Time:             15865000ps
+# Write cycle ended at Time:             15865000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             15865000ps
+#     SOF started at Time:             15865000ps
+#     SOF ended at Time:             15875000ps
+#     Arbitration started at Time:             15875000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             15985000ps
+#     Control field started at Time:             15985000ps
+#     Control field finished reading at Time:             16065000ps
+#     Data cycle started at Time:             16065000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             16385000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             16385000ps
+#     Code calculated 011110010001000 , at Time:            16385000ps
+#     CRC cycle finished reading (011110010001000) at Time:                16000ps
+#     Ack = 0
+#     ACK cycle started at Time:                16000ps
+#     EOF cycle started at Time:             16545000ps
+#     EOF cycle finished at Time:             16555000ps
+# Write cycle ended at Time:             16555000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             16555000ps
+#     SOF started at Time:             16555000ps
+#     SOF ended at Time:             16565000ps
+#     Arbitration started at Time:             16565000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             16675000ps
+#     Control field started at Time:             16675000ps
+#     Control field finished reading at Time:             16755000ps
+#     Data cycle started at Time:             16755000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             17075000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             17075000ps
+#     Code calculated 011110010001000 , at Time:            17075000ps
+#     CRC cycle finished reading (011110010001000) at Time:                17000ps
+#     Ack = 0
+#     ACK cycle started at Time:                17000ps
+#     EOF cycle started at Time:             17235000ps
+#     EOF cycle finished at Time:             17245000ps
+# Write cycle ended at Time:             17245000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             17245000ps
+#     SOF started at Time:             17245000ps
+#     SOF ended at Time:             17255000ps
+#     Arbitration started at Time:             17255000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             17365000ps
+#     Control field started at Time:             17365000ps
+#     Control field finished reading at Time:             17445000ps
+#     Data cycle started at Time:             17445000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             17765000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             17765000ps
+#     Code calculated 011110010001000 , at Time:            17765000ps
+#     CRC cycle finished reading (011110010001000) at Time:                17000ps
+#     Ack = 0
+#     ACK cycle started at Time:                17000ps
+#     EOF cycle started at Time:             17925000ps
+#     EOF cycle finished at Time:             17935000ps
+# Write cycle ended at Time:             17935000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             17935000ps
+#     SOF started at Time:             17935000ps
+#     SOF ended at Time:             17945000ps
+#     Arbitration started at Time:             17945000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             18055000ps
+#     Control field started at Time:             18055000ps
+#     Control field finished reading at Time:             18135000ps
+#     Data cycle started at Time:             18135000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             18455000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             18455000ps
+#     Code calculated 011110010001000 , at Time:            18455000ps
+#     CRC cycle finished reading (011110010001000) at Time:                18000ps
+#     Ack = 0
+#     ACK cycle started at Time:                18000ps
+#     EOF cycle started at Time:             18615000ps
+#     EOF cycle finished at Time:             18625000ps
+# Write cycle ended at Time:             18625000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             18625000ps
+#     SOF started at Time:             18625000ps
+#     SOF ended at Time:             18635000ps
+#     Arbitration started at Time:             18635000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             18745000ps
+#     Control field started at Time:             18745000ps
+#     Control field finished reading at Time:             18825000ps
+#     Data cycle started at Time:             18825000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             19145000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             19145000ps
+#     Code calculated 011110010001000 , at Time:            19145000ps
+#     CRC cycle finished reading (011110010001000) at Time:                19000ps
+#     Ack = 0
+#     ACK cycle started at Time:                19000ps
+#     EOF cycle started at Time:             19305000ps
+#     EOF cycle finished at Time:             19315000ps
+# Write cycle ended at Time:             19315000ps
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:             19315000ps
+#     SOF started at Time:             19315000ps
+#     SOF ended at Time:             19325000ps
+#     Arbitration started at Time:             19325000ps
+#     Arbitration is won
+#     Arbitration Ended cycle Time:             19435000ps
+#     Control field started at Time:             19435000ps
+#     Control field finished reading at Time:             19515000ps
+#     Data cycle started at Time:             19515000ps
+#     Data read correctly
+#     Data cycle finihsed writing at Time:             19835000ps
+#     Value read: 11111111111111111111111111111111
+#     CRC cycle started at Time:             19835000ps
+#     Code calculated 011110010001000 , at Time:            19835000ps
+#     CRC cycle finished reading (011110010001000) at Time:                19000ps
+#     Ack = 0
+#     ACK cycle started at Time:                19000ps
+#     EOF cycle started at Time:             19995000ps
+# End time: 20:25:28 on Dec 10,2017, Elapsed time: 0:01:45
+# Errors: 1, Warnings: 1

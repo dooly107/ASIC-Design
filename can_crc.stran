@@ -1,0 +1,102 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_AHB2CAN_top 
+# Start time: 01:25:24 on Dec 04,2017
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_AHB2CAN_top(fast)
+# Loading work.AHB2CAN_top(fast)
+# Loading work.AHB_Slave(fast)
+# Loading work.Control_Unit(fast)
+# Loading work.Sensor_FIFO_storage(fast)
+# Loading work.flex_counter(fast)
+# Loading work.Command_FIFO_storage(fast)
+# Loading work.can_register(fast)
+# Loading work.acceptance_filter(fast)
+# Loading work.can_crc(fast)
+# Loading work.flex_counter(fast__1)
+# Loading work.tx_sr(fast)
+# Loading work.flex_pts_sr(fast)
+# Loading work.rx_sr(fast)
+# Loading work.flex_stp_sr(fast)
+# Loading work.arbitration(fast)
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+add wave -position insertpoint sim:/tb_AHB2CAN_top/*
+add wave -position insertpoint sim:/tb_AHB2CAN_top/*
+run 2000ns
+# Write cycle started at Time:                    0ns
+#     SOF started at Time:                    0ns
+#     SOF ended at Time:                 5000ns
+#     Arbitration started at Time:                 5000ns
+# |||||||||||||||
+# Data send from master at Time:                25000
+# HWRITE = 1
+# HWDATA = 00000000000000000000000010000101
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 000000000000# End time: 01:26:42 on Dec 04,2017, Elapsed time: 0:04:36
+# Errors: 4, Warnings: 3
+    115000ns
+#     Control field started at Time:               115000ns
+# |||||||||||||||
+# Data send from master at Time:               175000
+# HWRITE = 1
+# HWDATA = 00000000000000000000000010000011
+# HTRANS = 10
+# HBURST = 000
+# HSIZE = 010
+# HSEL = 1
+# HADDR = 00000000000000000000000000000101
+# ||||||||||||||
+#     Control field finished reading at Time:               195000ns
+#     Data cycle started at Time:               195000ns
+#     Data read correctly
+#     Data cycle finihsed reading at Time:               515000ns
+#     Value read: 10000000000000010000000010000101
+#     CRC cycle started at Time:               515000ns
+#     Code calculated 100001111110010 , at Time:              835000ns
+#     CRC cycle finished reading (100001000000000) at Time:                    0ns
+#     Ack = 1
+#     ACK cycle started at Time:                    0ns
+#     EOF cycle started at Time:               985000ns
+#     EOF cycle finished at Time:               995000ns
+# Write cycle ended at Time:               995000ns
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:               995000ns
+#     SOF started at Time:               995000ns
+#     SOF ended at Time:              1005000ns
+#     Arbitration started at Time:              1005000ns
+#     Arbitration Ended cycle Time:              1115000ns
+#     Control field started at Time:              1115000ns
+#     Control field finished reading at Time:              1195000ns
+#     Data cycle started at Time:              1195000ns
+#     Data was incorrect, Expected 00000000000000000000000000000000
+#     Data cycle finihsed reading at Time:              1515000ns
+#     Value read: 11000011011101100000010101000000
+#     CRC cycle started at Time:              1515000ns
+#     Code calculated 100011000110111 , at Time:             1835000ns
+#     CRC cycle finished reading (111111101111001) at Time:                 1000ns
+#     Ack = 1
+#     ACK cycle started at Time:                 1000ns
+#     EOF cycle started at Time:              1985000ns
+#     EOF cycle finished at Time:              1995000ns
+# Write cycle ended at Time:              1995000ns
+# ---------------------------
+# ---------------------------
+# ---------------------------
+# Write cycle started at Time:              1995000ns
+#     SOF started at Time:              1995000ns
+# End time: 01:26:19 on Dec 04,2017, Elapsed time: 0:00:55
+# Errors: 0, Warnings: 1

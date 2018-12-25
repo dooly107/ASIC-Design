@@ -1,0 +1,21 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2016 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v16.12-s051_1, built Wed Aug 17 12:18:54 PDT 2016
+Options:	
+Date:		Wed Dec 13 15:42:43 2017
+Host:		ecegrid-thin5.ecn.purdue.edu (x86_64 w/Linux 2.6.32-696.13.2.el6.x86_64) (12cores*48cpus*Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz 30720KB)
+OS:		Red Hat Enterprise Linux Workstation release 6.9 (Santiago)
+
+License:
+		invs	Innovus Implementation System	16.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getDrawView
+<CMD> loadWorkspace -name Physical
+<CMD> win
